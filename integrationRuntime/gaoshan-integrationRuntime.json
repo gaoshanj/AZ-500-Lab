@@ -1,0 +1,6 @@
+{
+	"name": "gaoshan-integrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
