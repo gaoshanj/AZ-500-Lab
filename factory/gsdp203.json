@@ -1,0 +1,9 @@
+{
+	"name": "gsdp203",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "faa77759-4a4b-41d4-b13f-be55fd6b87ca",
+		"tenantId": "bd2ab852-a493-443b-858a-2556f20325c2"
+	}
+}
