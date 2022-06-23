@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "select1"
+				},
+				{
+					"name": "filter1"
 				}
 			],
 			"scriptLines": [
@@ -39,14 +42,15 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 select(mapColumn(",
 				"          {姓名} = {_col0_},",
-				"          sex = {_col1_},",
+				"          {性别} = {_col1_},",
 				"          {电话} = {_col2_},",
 				"          {邮箱} = {_col3_},",
 				"          {信用卡} = {_col4_}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"select1 filter({性别} == 'Male') ~> filter1",
+				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
